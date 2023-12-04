@@ -1,4 +1,4 @@
-@import url("reset.css");
+
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@400;600&display=swap');
 
@@ -87,7 +87,7 @@ body{
 .login-card-form .checkbox {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 8px;
 }
 
 .login-card-form .form-item-other {
