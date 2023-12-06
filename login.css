@@ -14,7 +14,7 @@ body{
 .login-card {
     width: 450px;
     background: rgba(255, 255, 255, .5);
-    padding: 4rem;
+    padding: 12px;
     border-radius: 10px;
     position: relative;
 }
@@ -33,13 +33,14 @@ body{
 }
 
 .login-card-logo img {
-    width: 100px;
+    width: 120px;
+    padding: 10px;
 }
 
 .login-card-logo,
 .login-card-header,
 .login-card-footer {
-    text-align: center;
+    text-align: center
 }
 
 .login-card a {
@@ -63,7 +64,7 @@ body{
 
 .login-card-header h1 + div {
     font-size: calc(1rem * .8);
-    opacity: .8;
+    opacity: .6;
 }
 
 .login-card-form {
@@ -76,12 +77,12 @@ body{
     position: relative;
 }
 
-.login-card-form .form-item .form-item-icon {
-    position: absolute;
-    top: .82rem;
-    left: 1.4rem;
+.form-login-card .form-item .form-item-icon {
+    position: relative;
+    top: 50%;
+    left: 50%;
     font-size: 1.3rem;
-    opacity: .4;
+    opacity: .2;
 }
 
 .login-card-form .checkbox {
@@ -108,10 +109,10 @@ body{
     border: none;
     outline: none;
     background: rgba(255, 255, 255, .3);
-    padding: 1.5rem 1.5rem;
+    padding: 1.4rem 1.4rem;
     padding-left: calc(1rem * 3.5);
-    border-radius: 100px;
-    width: 400px;
+    border-radius: 80px;
+    width: 375px;
     transition: .5s;
 }
 
@@ -120,8 +121,8 @@ body{
 }
 
 .login-card input[type="checkbox"] {
-    width: 16px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     accent-color: black;
     justify-content: center;
 }
@@ -130,7 +131,7 @@ body{
     background-color: #c24ba4;
     color: #fff;
     padding: 10px 20px;
-    margin: 40px;
+    margin: 35px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
