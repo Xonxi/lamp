@@ -8,6 +8,8 @@
 body {
     margin: 0;
     overflow-x: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 .hero {
@@ -15,13 +17,15 @@ body {
     color: #fff;
     position: relative;
     padding: 20px 0;
+    height: 100%;
+    width: 100%;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 8%;
+    padding: 0px 8%;
 }
 
 nav .menu-img {

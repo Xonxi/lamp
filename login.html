@@ -53,31 +53,29 @@
               </div>
         <script>
             function validateForm() {
-             
-              var emailInput = document.getElementById('emailInput').value;
-              var passwordInput = document.getElementById('passwordInput').value;
-        
-             
-              var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              var isEmailValid = emailRegex.test(emailInput);
-        
-              var passwordRegex = /^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\d])(?=.*[A-Z]).{6,}$/;
-              var isPasswordValid = passwordRegex.test(passwordInput);
-              var isPasswordValid = passwordInput.trim() !== '';
-                
-              setTimeout(function () {
-            alert('Jeni kyqur me sukses');   
-            window.location.href = 'kryefaqja.html';
-            }, 3000);    
+            var emailInput = document.getElementById('emailInput').value;
+            var passwordInput = document.getElementById('passwordInput').value;
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var isEmailValid = emailRegex.test(emailInput);
+
+            var passwordRegex = /^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\d])(?=.*[A-Z]).{6,}$/;
+            var isPasswordValid = passwordRegex.test(passwordInput);
+
+            var errorMessageElement = document.getElementById('errorMessage');
+
+            if (!isEmailValid || !isPasswordValid) {
+            errorMessageElement.textContent = 'Gabim Kodi ose Emaili';
             return false;
-            }
             
-              var errorMessageElement = document.getElementById('errorMessage');
-              if (!isEmailValid || !isPasswordValid) {
-                errorMessageElement.textContent = 'Gabim Kodi ose Emaili';
-              } else {
-             
-              }
+            } else {
+            setTimeout(function () {
+            alert('Jeni kyqur me sukses');
+            window.location.href = 'kryefaqja.html';
+            }, 3000);
+            return false; 
+    }
+}
             
           </script>
 </body>
