@@ -76,6 +76,7 @@ ul li a:hover::after{
 
 .contact-collection h2 {
     margin-bottom: 30px;
+    padding: 50px;
     font-size: 40px;
     font-weight: 400;
     -webkit-text-fill-color: transparent;
@@ -105,6 +106,7 @@ button {
     background-color: #00986f;
     color: #fff;
     padding: 10px 10px;
+    margin: 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
