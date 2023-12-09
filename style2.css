@@ -164,7 +164,7 @@ button {
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #1a1a1a;
-    border-radius: 0px;
+    border-radius: 10px;
     background-color: #f8f8f8;
     transition: border-color 0.3s ease-in-out;
 }

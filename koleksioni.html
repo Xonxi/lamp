@@ -42,13 +42,13 @@
         <h2>Kontakto</h2>
         <form>
             <label for="name">Emri Juaj:</label>
-            <input type="text" id="name" name="name"  required>
+            <input type="text" placeholder="Emri" id="name" name="name"  required>
 
-            <label for="email">Emaili:</label>
-            <input type="email" id="email" name="email" required autofocus>
+            <label for="email">Email-in:</label>
+            <input type="email" placeholder="Email-in" id="email" name="email" required autofocus>
 
             <label for="message">Kerkesa Juaj:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <textarea id="message" placeholder="Shkruaj Ketu" name="message" rows="4" required></textarea>
         </form>
         <button type="button" onclick="validateForm()">Dergo Kerkesen</button>
         <p id="errorMessage"></p>
@@ -66,14 +66,6 @@
             var isEmailValid = emailRegex.test(email);
 
             var errorMessageElement = document.getElementById('errorMessage');
-
-            if (!isEmailValid) {
-            errorMessageElement.textContent = 'Ju lutem shenoni nje email valid';
-            return false;
-            } else {
-            alert('Jeni kyqur me sukses');
-            window.location.href = 'kryefaqja.html';
-        }
 
             if (name === "" || email === "" || message === "") {
                 alert("Ju lutem plotesoni te gjitha fushat");
