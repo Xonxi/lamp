@@ -45,16 +45,43 @@
             <input type="text" id="name" name="name"  required>
 
             <label for="email">Emaili:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required autofocus>
 
             <label for="message">Kerkesa Juaj:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
         </form>
-        <button type="submit">Dergo Kerkesen</button>
+        <button type="button" onclick="validateForm()">Dergo Kerkesen</button>
+        <p id="errorMessage"></p>
         </section>
     </section>
     <footer>
-    </footer> 
+    </footer>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var isEmailValid = emailRegex.test(email);
+
+            var errorMessageElement = document.getElementById('errorMessage');
+
+            if (!isEmailValid) {
+            errorMessageElement.textContent = 'Ju lutem shenoni nje email valid';
+            return false;
+            } else {
+            alert('Jeni kyqur me sukses');
+            window.location.href = 'kryefaqja.html';
+        }
+
+            if (name === "" || email === "" || message === "") {
+                alert("Ju lutem plotesoni te gjitha fushat");
+            } else {
+                alert("Formulari u dergua me sukses!");
+            }
+        }
+    </script>
 
 </body>
 </html>

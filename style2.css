@@ -205,14 +205,18 @@ footer {
     color: #fff;
     padding: 10px;
 }
+
+#errorMessage{
+    color: red;
+}
 @media only screen and (max-width: 600px) {
     .body, .hero {
-      background-color: #1a1a1a;
+    background-color: #1a1a1a;
     }
-  }
-  
-  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
     .body, .hero {
-      background-color: #1a1a1a;
+    background-color: #1a1a1a;
     }
-  }
+}
