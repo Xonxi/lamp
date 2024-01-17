@@ -1,48 +1,54 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     box-sizing: border-box;
 }
 
-.hero{
+.hero {
     background: #1a1a1a;
     height: 100%;
     width: 100%;
     color: #fff;
-    position: fixed;  
+    position: fixed;
 }
-nav{
+
+nav {
     display: flex;
     align-items: center;
     padding: 20px 8%;
 }
-nav .menu-img{
+
+nav .menu-img {
     width: 25px;
     margin-right: 20px;
     cursor: pointer;
 }
-nav .logo{
+
+nav .logo {
     width: 160px;
     cursor: pointer;
 }
-nav ul{
+
+nav ul {
     flex: 1;
     text-align: right;
 }
-nav ul li{
+
+nav ul li {
     display: inline-block;
     list-style-type: none;
     margin: 0 20px;
 }
-ul li a{
+
+ul li a {
     position: relative;
     padding-bottom: 0.75rem;
     color: #fff;
     text-decoration: none;
 }
-    
-ul li a::after{
+
+ul li a::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -52,11 +58,12 @@ ul li a::after{
     background-color: #00986f;
     transition: all 0.3s ease;
 }
-ul li a:hover::after{
+
+ul li a:hover::after {
     width: 70%;
 }
 
-button{
+button {
     background: #efefef;
     height: 30px;
     width: 60px;
@@ -66,7 +73,8 @@ button{
     cursor: pointer;
     transition: background 0.5s;
 }
-button span{
+
+button span {
     display: block;
     background: #999;
     height: 26px;
@@ -75,16 +83,19 @@ button span{
     margin-left: 2px;
     transition: background 0.5s, margin-left 0.5s;
 }
-.lamp-container{
+
+.lamp-container {
     position: absolute;
     top: -60px;
     left: 22%;
     width: 200px;
 }
-.lamp{
+
+.lamp {
     width: 100%;
 }
-.light{
+
+.light {
     position: absolute;
     top: 97%;
     left: 50%;
@@ -95,12 +106,14 @@ button span{
     transition: opacity 0.5s;
 
 }
-.text-container{
+
+.text-container {
     max-width: 600px;
     margin-top: 7%;
     margin-left: 50%;
 }
-.text-container h1{
+
+.text-container h1 {
     font-size: 40px;
     font-weight: 400;
     -webkit-text-fill-color: transparent;
@@ -108,7 +121,7 @@ button span{
 }
 
 
-.text-container a{
+.text-container a {
     text-decoration: none;
     background: #00986f;
     padding: 14px 40px;
@@ -118,20 +131,23 @@ button span{
     margin-top: 30px;
     border-radius: 30px;
 }
-.control{
+
+.control {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-top: 150px;
 }
-.control .line{
+
+.control .line {
     width: 250px;
     height: 4px;
     background: #fff;
     margin: 0 20px;
     border-radius: 2px;
 }
-.control .line span{
+
+.control .line span {
     width: 50%;
     height: 8px;
     margin-top: -2px;
@@ -139,18 +155,21 @@ button span{
     background: #00986f;
     display: block;
 }
-.active{
+
+.active {
     background: green;
 }
-.active span{
+
+.active span {
     background: #fff;
     margin-left: 31px;
 }
-.on{
+
+.on {
     opacity: 1;
 }
 
-.copyright{
+.copyright {
     max-width: 1200px;
     margin: auto;
     padding: 1rem;
@@ -158,17 +177,16 @@ button span{
     font-size: 0.8rem;
     text-align: center;
 }
-footer{
+
+footer {
     position: relative;
     display: grid;
     grid-template-columns: 400px repeat(3, 1fr);
     gap: 2rem;
     display: flex;
-    flex-direction: column-reverse;        
+    flex-direction: column-reverse;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
     align-content: center;
 }
-
-  

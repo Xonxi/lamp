@@ -1,8 +1,6 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@400;600&display=swap');
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     background: linear-gradient(to right, #777a29, #7a2569);
@@ -62,7 +60,7 @@ body{
     margin-bottom: .5rem;
 }
 
-.login-card-header h1 + div {
+.login-card-header h1+div {
     font-size: calc(1rem * .8);
     opacity: .6;
 }
@@ -140,11 +138,13 @@ body{
     transition: background-color 0.3s ease-in-out;
     justify-content: center;
 }
+
 .error-message {
     color: red;
     margin-top: 10px;
     text-align: center;
 }
+
 .form-item {
     position: relative;
 }
@@ -157,6 +157,7 @@ body{
     pointer-events: none;
 }
 
-#emailInput, #passwordInput {
-    padding-left: 45px; 
+#emailInput,
+#passwordInput {
+    padding-left: 45px;
 }

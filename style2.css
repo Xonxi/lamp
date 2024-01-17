@@ -47,14 +47,14 @@ nav ul li {
     margin: 0 20px;
 }
 
-ul li a{
+ul li a {
     position: relative;
     padding-bottom: 0.75rem;
     color: #fff;
     text-decoration: none;
 }
-    
-ul li a::after{
+
+ul li a::after {
     content: "";
     position: absolute;
     height: 2px;
@@ -64,9 +64,11 @@ ul li a::after{
     background-color: #00986f;
     transition: all 0.3s ease;
 }
-ul li a:hover::after{
+
+ul li a:hover::after {
     width: 70%;
 }
+
 .contact-collection {
     background-color: #1a1a1a;
     padding: 50px 0;
@@ -102,6 +104,7 @@ ul li a:hover::after{
 .contact-collection .image-gallery img:hover {
     transform: scale(1.1);
 }
+
 button {
     background-color: #00986f;
     color: #fff;
@@ -114,6 +117,7 @@ button {
     transition: background-color 0.3s ease-in-out;
     justify-content: center;
 }
+
 .main-content,
 .contact-form {
     text-align: center;
@@ -206,17 +210,22 @@ footer {
     padding: 10px;
 }
 
-#errorMessage{
+#errorMessage {
     color: red;
 }
+
 @media only screen and (max-width: 600px) {
-    .body, .hero {
-    background-color: #1a1a1a;
+
+    .body,
+    .hero {
+        background-color: #1a1a1a;
     }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
-    .body, .hero {
-    background-color: #1a1a1a;
+
+    .body,
+    .hero {
+        background-color: #1a1a1a;
     }
 }
