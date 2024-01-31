@@ -81,7 +81,8 @@
                 errorMessageElement.textContent = 'Ju lutem plotesoni te gjitha hapesirat';
             } else {
 
-                alert('Jeni regjistruar me sukses');;
+                alert('Jeni regjistruar me sukses');
+            window.location.href = 'kryefaqja.php';
             }
         }
 

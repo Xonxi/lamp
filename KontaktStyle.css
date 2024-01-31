@@ -1,5 +1,4 @@
 
-/* Global styles */
 body {
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
@@ -13,7 +12,7 @@ body {
 
 .hero {
     background: #1a1a1a;
-    color: #fff;
+    color: #080808;
     padding: 20px 0;
 }
 
@@ -57,84 +56,6 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 70%;
-}
-
-.contact-collection {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.contact-collection h2 {
-    font-size: 40px;
-    font-weight: 400;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #fff;
-}
-
-.slider-container {
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    flex: 0 0 auto;
-    width: 100%;
-    scroll-snap-align: start;
-}
-
-.contact-collection .slider-container img {
-    max-width: 80%; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 20px; /* Adjust spacing between images */
-    border: 1px solid #fff;
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
-}
-
-
-.slide img:hover {
-    transform: scale(1.1);
-}
-
-.button-container {
-    margin-top: 20px;
-}
-
-button {
-    background-color: #00986f;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.main-content {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 40px;
-}
-
-.main-content h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.main-content p {
-    font-size: 16px;
-    margin-bottom: 15px;
 }
 
 .contact-form {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="KontaktStyle.css">
+    <link rel="icon" type="image/x-icon" href="fotot/logo1.jpg">
+    <title>Document</title>
+</head>
+<body>
+    <header class="hero">
+        <nav>
+            <img src="fotot/logo1.jpg" alt="Logo" class="logo">
+            <ul>
+                <li><a href="Kryefaqja.php">Kryefaqja</a></li>
+                <li><a href="koleksioni.php">Koleksioni</a></li>
+                <li><a href="login.php">Kyqu</a></li>
+                <li> <a href="Kontakti.html">Kontakti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Informacione rreth kontaktit</h2>
+    <p>Emaili: info@lampworld.com</p>
+    <p>Numri tel: +383 (45) 356-776</p>
+
+    <section class="contact-form container">
+        <h2>Kontakto</h2>
+        <form>
+            <label for="name">Emri Juaj:</label>
+            <input type="text" placeholder="Emri" id="name" name="name" required>
+
+            <label for="email">Email-in:</label>
+            <input type="email" placeholder="Email-in" id="email" name="email" required autofocus>
+
+            <label for="message">Kerkesa Juaj:</label>
+            <textarea id="message" placeholder="Shkruaj Ketu" name="message" rows="4" required></textarea>
+        </form>
+        <button type="button" onclick="validateForm()">Dergo Kerkesen</button>
+        <p id="errorMessage"></p>
+    </section>
+</section>
+
+<footer>
+    <div class="copyright">
+        Copyright © 2023 Lamp. All Rights Reserved.
+    </div>
+</footer>
+
+</body>
+</html>
+<script>
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var isEmailValid = emailRegex.test(email);
+
+        var errorMessageElement = document.getElementById('errorMessage');
+
+        if (name === "" || email === "" || message === "") {
+            alert("Ju lutem plotesoni te gjitha fushat");
+        } else {
+            alert("Formulari u dergua me sukses!");
+        }
+    }
