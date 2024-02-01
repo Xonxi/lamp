@@ -18,6 +18,7 @@
                 <li><a href="kryefaqja.php">Kryefaqja</a></li>
                 <li><a href="koleksioni.php">Koleksioni</a></li>
                 <li><a href="login.php">Kyqu</a></li>
+                <li> <a href="Kontakti.html">Kontakti</a></li>
             </ul>
             <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
         </nav>
