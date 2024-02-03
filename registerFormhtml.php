@@ -32,9 +32,7 @@
                 <div class="form-item">
                     <input type="text" name="surname" placeholder="Sheno mbiemrin" required autofocus id="surnameInput">
                 </div>
-                <div class="form-item">
-                    <input type="number" name="age" placeholder="Sheno moshen" required autofocus id="numberInput">
-                </div>
+
                 <div class="form-item">
                     <input type="email" name="email" placeholder="Sheno email-in" required autofocus id="emailInput">
                 </div>
@@ -82,7 +80,7 @@
             } else {
 
                 alert('Jeni regjistruar me sukses');
-            window.location.href = 'kryefaqja.php';
+                window.location.href = 'kryefaqja.php';
             }
         }
 

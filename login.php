@@ -25,26 +25,29 @@
         <h1>Kyquni</h1>
         <div>Ju lutem vazhdoni me poshte</div>
       </div>
-      <form class="form-login-card" id="login-form" method="post" action="verify-login.php">
+      <form class="form-login-card" id="login-form" method="post" action="verify-login.php"
+        onsubmit="return validateForm()">
         <div class="form-item">
           <span class="material-symbols-outlined">
             mail
           </span>
-          <input type="email" placeholder="Sheno email-in" required autofocus id="emailInput">
+          <input type="email" placeholder="Sheno email-in" required autofocus id="emailInput" name="email">
+          <!-- Add name="email" attribute -->
         </div>
 
         <div class="form-item">
           <span class="material-symbols-outlined">
             lock
           </span>
-          <input type="password" placeholder="Sheno kodin" required id="passwordInput">
+          <input type="password" placeholder="Sheno kodin" required id="passwordInput" name="password">
+          <!-- Add name="password" attribute -->
         </div>
 
         <div class="form-item-other">
           <div class="checkbox">
             <input type="checkbox" id="rememberMeCheckbox">
             <label for="rememberMeCheckbox">Me mbaj mend</label>
-            <button type="button" onclick="validateForm()">Sign In</button>
+            <button type="submit">Sign In</button>
           </div>
 
           <div class="error-message" id="errorMessage"></div>
@@ -73,14 +76,11 @@
           return false;
 
         } else {
-          setTimeout(function () {
-            alert('Jeni kyqur me sukses');
-            window.location.href = 'kryefaqja.php';
-          }, 3000);
-          return false;
+          return true;
         }
       }
     </script>
+
 </body>
 
 </html>

@@ -1,37 +1,52 @@
 <?php
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['email']) && isset($_POST['password'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Invalid email format.";
+            exit;
+        }
 
+        $mysqli = new mysqli("localhost", "root", "", "test");
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email format.";
-        exit;
-    }
+        if ($mysqli->connect_error) {
+            die("Connection failed: " . $mysqli->connect_error);
+        }
 
+        $stmt = $mysqli->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
+        $stmt->bind_param("ss", $email, $password);
 
-    $mysqli = new mysqli("localhost", "user", "new_password", "testing");
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-    if ($mysqli->connect_error) {
-        die("Connection failed: " . $mysqli->connect_error);
-    }
+        if ($result->num_rows === 1) {
+            $row = $result->fetch_assoc();
+            $role = $row['role'];
 
-    $stmt = $mysqli->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
-    $stmt->bind_param("ss", $email, $password);
+            $_SESSION['role'] = $role;
+            $_SESSION['user_id'] = $row['user_id'];
 
-    $stmt->execute();
-    $result = $stmt->get_result();
+            echo "Login successful";
 
-    if ($result->num_rows === 1) {
-        echo "Login successful";
-        header("Location: kryefaqja.php");
-        exit;
+            if ($role === "user") {
+                header("Location: kryefaqja.php");
+                exit;
+            } elseif ($role === "admin") {
+                header("Location: AdminPanel.html");
+                exit;
+            }
+        } else {
+            echo "Invalid email or password.";
+        }
+
+        $stmt->close();
+        $mysqli->close();
     } else {
-        echo "Invalid email or password.";
+        echo "Email and password are required.";
     }
-
-    $stmt->close();
-    $mysqli->close();
 }
 ?>

@@ -1,0 +1,181 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #1a1a1a;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0px;
+}
+
+.hero {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 20px 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+}
+
+nav .logo {
+  width: 160px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #00986f;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 70%;
+}
+
+.contact-collection {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+
+.slider-container.produktet-foto {
+  margin: 350px;
+  border: 1px solid #ccc;
+  width: 600px;
+}
+
+.slider-container.produktet-foto:hover {
+  border: 1px solid #777;
+}
+
+.slider-container.produktet-foto img {
+  width: 100%;
+  height: auto;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.slider-container.produktet-foto {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.slide {
+  flex: 0 0 auto;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #00986f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn button:hover {
+  background-color: #007855;
+}
+
+.prev,
+.next {
+  background-color: #00986f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #007855;
+}
+
+.add,
+.updt,
+.dlt {
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add:hover,
+.updt:hover,
+.dlt:hover {
+  background-color: #ff473d;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}

@@ -1,8 +1,8 @@
 <?php
 $hostname = "localhost";
-$userName = "user";
-$password = "new_password"; 
-$dbName = "testing";
+$userName = "root";
+$password = "";
+$dbName = "test";
 
 $con = mysqli_connect($hostname, $userName, $password, $dbName);
 
@@ -14,5 +14,5 @@ if (mysqli_connect_errno()) {
 echo "Connected successfully";
 
 
-mysqli_close($con); 
+mysqli_close($con);
 ?>

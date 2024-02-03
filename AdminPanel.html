@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="AdminPanel.css" />
+    <title>Koleksioni</title>
+    <link rel="icon" type="image/x-icon" href="fotot/logo1.jpg" />
+  </head>
+
+  <body>
+    <header class="hero">
+      <nav>
+        <img src="fotot/logo1.jpg" alt="Logo" class="logo" />
+        <ul>
+          <li><a href="Kryefaqja.php">Kryefaqja</a></li>
+          <li><a href="koleksioni.php">Koleksioni</a></li>
+          <li><a href="login.php">Kyqu</a></li>
+          <li><a href="Kontakti.html">Kontakti</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h2>Koleksioni</h2>
+    <div class="slider-container">
+      <!-- Slides will be dynamically populated based on database data -->
+    </div>
+    <div class="btn">
+      <button class="prev">Previous</button>
+      <button class="next">Next</button>
+      <button class="add">Add</button>
+      <button class="updt">Update</button>
+      <button class="dlt">Delete</button>
+    </div>
+
+    <footer>
+      <div class="copyright">Copyright © 2023 Lamp. All Rights Reserved.</div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let slideIndex = 0;
+        const slidesContainer = document.querySelector(".slider-container");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const deleteBtn = document.querySelector(".dlt");
+        const updateBtn = document.querySelector(".updt"); // Added Update button
+
+        function showSlides() {
+          fetch("get_descriptions.php")
+            .then((response) => response.json())
+            .then((descriptions) => {
+              let slidesHTML = "";
+
+              descriptions.forEach((description, index) => {
+                const imagePaths = [
+                  "fotot/LSD01-11-2000x2000.jpg",
+                  "fotot/LSD01-13-2000x2000.jpg",
+                  "fotot/LSD01-15-2000x2000.jpg",
+                  "fotot/LT34-09412-2000x2000.jpg",
+                ];
+
+                slidesHTML += `<div class="slide" style="display: ${
+                  index === slideIndex ? "block" : "none"
+                };">
+                                  <img src="${imagePaths[index]}" alt="slide ${
+                  index + 1
+                }" />
+                                  <div class="desc">${description}</div>
+                                </div>`;
+              });
+
+              slidesContainer.innerHTML = slidesHTML;
+            })
+            .catch((error) =>
+              console.error("Error fetching descriptions:", error)
+            );
+        }
+
+        function nextSlide() {
+          slideIndex++;
+          if (slideIndex >= slidesContainer.children.length) {
+            slideIndex = 0;
+          }
+          showSlides();
+        }
+
+        function prevSlide() {
+          slideIndex--;
+          if (slideIndex < 0) {
+            slideIndex = slidesContainer.children.length - 1;
+          }
+          showSlides();
+        }
+
+        function deleteSlide() {
+          fetch("images.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `action=delete&slideIndex=${slideIndex}`,
+          })
+            .then((response) => response.text())
+            .then((result) => {
+              console.log(result);
+              showSlides();
+            })
+            .catch((error) => console.error("Error deleting slide:", error));
+        }
+
+        function updateSlide() {
+          // Send AJAX request to update the slide
+          const newDescription = prompt("Enter new description:");
+          fetch("images.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `action=update&slideIndex=${slideIndex}&newDescription=${newDescription}`,
+          })
+            .then((response) => response.text())
+            .then((result) => {
+              console.log(result);
+              showSlides();
+            })
+            .catch((error) => console.error("Error updating slide:", error));
+        }
+
+        prevBtn.addEventListener("click", prevSlide);
+        nextBtn.addEventListener("click", nextSlide);
+        deleteBtn.addEventListener("click", deleteSlide);
+        updateBtn.addEventListener("click", updateSlide); // Added event listener for Update button
+
+        setInterval(nextSlide, 3000);
+
+        showSlides();
+      });
+    </script>
+  </body>
+</html>
